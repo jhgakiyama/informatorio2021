@@ -1,0 +1,9 @@
+django-admin startproject mysite .
+py manage.py startapp preguntas
+py manage.py startapp trivias
+py manage.py migrate
+python manage.py createsuperuser
+
+LANGUAGE_CODE = 'es-AR'
+
+TIME_ZONE: 'America/Argentina/Buenos_Aires'
