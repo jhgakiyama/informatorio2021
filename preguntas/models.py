@@ -18,6 +18,9 @@ class Pregunta(models.Model):
         default=1
     )
 
+    def __str__(self):
+        return str(self.texto)
+
 
 class Respuesta(models.Model):
     texto = models.CharField(max_length=120)
