@@ -1,0 +1,29 @@
+[
+  {
+    "model": "preguntas.pregunta",
+    "pk": 1,
+    "fields": {
+                "texto": "Resistencia es conocida como:",
+                "categoria": 2
+    }
+  },
+
+  {
+    "model": "preguntas.pregunta",
+    "pk": 2,
+    "fields": {
+                "texto": "¿Cuántas esculturas hay en Resistencia?:",
+                "categoria": 2
+    }
+  },
+
+  {
+    "model": "preguntas.pregunta",
+    "pk": 3,
+    "fields": {
+                "texto": "¿En qué sectores se divide geográficamente la provincia del Chaco?",
+                "categoria": 7
+    }
+  }
+]
+
