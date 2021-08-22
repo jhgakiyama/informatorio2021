@@ -15,9 +15,9 @@ class Trivia(models.Model):
         choices=NIVEL_CHOICES,
         default=1
     )
-
     user = models.ForeignKey(
-        'usuario',
         User,
-        on_delete=models.CASCADE
+        related_name='user',
+        on_delete=models.CASCADE,
     )
+
