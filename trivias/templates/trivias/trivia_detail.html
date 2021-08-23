@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{object.nombre}}
+{% endblock title %}
+
+{% block content %}
+<h2><strong>{{object.nombre}}</strong></h2>
+
+<ul>
+    <li>Categoria:{{object.categoria}}</li>
+    <li>Numero de preguntas: {{object.nro_preguntas}}</li>
+    <li>Porcentaje para aprobar: {{object.por_aprob}}%</li>
+    <li>Dificultad: {{object.get_nivel_display}}</li>
+</ul>
+
+
+<h2>Preguntas</h2>
+{% for pregunta in object.get_preguntas %}
+
+  <li class="list-group-item"><strong>{{ forloop.counter }}.</strong> {{pregunta.texto}}</li>
+    <br>
+    <ul class="list-group">
+        {% for rta in pregunta.get_respuestas %}
+            <li class="list-group-item">
+                <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                {{rta.texto}}
+            </li>
+        {% endfor %}
+    </ul>
+    <hr>
+{% endfor %}
+
+{% endblock content %}

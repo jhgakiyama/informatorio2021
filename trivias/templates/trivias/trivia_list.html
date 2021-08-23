@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}Cuestionario Listado{% endblock title %}
+
+{% block content %}
+
+<h1>Listado de Trivias</h1>
+
+<hr>
+
+<div class="row">
+
+    {% for trivia in object_list %}
+        <div class="col">
+<div class="card border-primary mb-3" style="max-width: 20rem;">
+
+
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Argentina_Chaco_location_map.svg/800px-Argentina_Chaco_location_map.svg.png" class="card-img-top" alt="...">
+                  <div class="card-body">
+                        <h5 class="card-title">{{trivia.nombre}}</h5>
+                        <p class="card-text">
+                            <ul>
+                                <li>Dificultad: {{trivia.get_nivel_display}}</li>
+                                <li>Preguntas: {{trivia.nro_preguntas}}</li>
+                                <li>Porcentaje para aprobar: {{trivia.por_aprob}}%</li>
+                            </ul>
+                        </p>
+                        <a href="{% url 'trivia-detail' trivia.id %}" class="btn btn-primary">Jugar!</a>
+
+                  </div>
+            </div>
+       </div>
+    {% endfor %}
+
+</div>
+
+{% comment %}
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Empezamos ?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-success">Si!</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endcomment %}
+
+{% endblock content %}
