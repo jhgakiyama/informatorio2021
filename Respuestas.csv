@@ -1,0 +1,193 @@
+﻿1;1;1;La ciudad de las esculturas
+1;2;0;Ciudad Museo
+1;3;0;Ciudad Capital
+2;4;0;200
+2;5;0;700
+2;6;1;600
+3;7;1;Litoral Chaqueño, centro Chaqueño e Impenetrable Chaqueño
+3;8;0;Litoral Chaqueño e Impenetrable Chaqueño
+3;9;0;Chaco Boreal y Chaco Austral
+4;10;0;Maipú
+4;11;0;Bermejo
+4;12;1;12 de octubre
+5;13;0;Pilcomayo
+5;14;0;Paraná
+5;15;1;Bermejo
+6;16;1;Paralelo 28
+6;17;0;Paralelo 30
+6;18;0;Paralelo 29
+7;19;0;Puerto de Barranqueras con Formosa
+7;20;1;Puerto de Barranqueras con Salta
+7;21;0;Puerto de Barranquera con Santiago del Estero
+8;22;1;Juan Manuel Silva
+8;23;0;Giorgio Carrara
+8;24;0;Marcos Siebert
+9;25;1;Basquet
+9;26;0;Futbol
+9;27;0;Jockey
+10;28;0;Natación
+10;29;0;Remo
+10;30;1;Atletismo
+11;31;0;For Ever
+11;32;1;Sarmiento
+11;33;0;Don Orione
+12;34;0;Acordeón
+12;35;1;N´viké
+12;36;0;Charango
+13;37;1;Caza comunal de animales
+13;38;0;Nombre de un árbol que abunda en la región
+13;39;0;Nombre de un animal
+14;40;1;99.633 Km²
+14;41;0;32.565 Km²
+14;42;0;29.900 Km²
+15;43;0;300.000
+15;44;0;2.000.000
+15;45;1;1.000.000
+16;46;0;Gral. Lorenzo Winter
+16;47;1;Gral. Julio de Vedia
+16;48;0; Gral. Antononio Dónovan
+17;49;0;Tony Zalazar
+17;50;1;Aledo Luis Meloni
+17;51;0;Tete Romero
+18;52;1;Los departamentos provinciales
+18;53;0;Las ciudades principales
+18;54;0;Grandes personajes que forzaron Chaco
+19;55;0;La Municipalidad de la Ciudad
+19;56;0;El Fogón de los Arrieros
+19;57;1;Casa de Gobierno
+20;58;0;Caña de azúcar
+20;59;1;Algodón
+20;60;0;Producción de Tanino
+21;61;0;Flor del cardo
+21;62;0;Flor del Ceibo
+21;63;1;Flor rosada del palo borracho
+22;64;0;El coro polifónico de Resistencia
+22;65;0;El coro de niños
+22;66;1;El coro Chelaalapí
+23;67;0;Gabriel Grotti
+23;68;1;Nicolás de Carlo
+23;69;0;José Alumni
+24;70;0;1973
+24;71;1;1974
+24;72;0;1976
+25;73;1;Felipe Gallardo
+25;74;0;Danilo Baroni
+25;75;0;Deolindo Bittel
+26;76;1;8 de agosto de 1951
+26;77;0;8 de agosto de 1958
+26;78;0;8 de agosto de 1955
+27;79;1;Qom
+27;80;1;Moqoi
+27;81;1;Wichi
+27;82;1;Vilelas
+27;83;0;Guaraníes
+28;84;0;Esteco
+28;85;1;Concepción del Bermejo
+28;86;0;San Fernando del Río Negro
+29;87;0;Ciudad española
+29;88;1;Reducción de los jesuitas
+29;89;0;Misión franciscana
+30;90;0;San Carlos del Timbo
+30;91;0;San Bernardo de Vértiz
+30;92;1;Nuestra Señora de los Dolores de la Cangaye
+30;93;0;La capital de la Gobernación del Chaco se ubicaba en
+30;94;0;Villa Occidental
+30;95;0;Resistencia
+31;96;0;1810
+31;97;1;1862
+31;98;0;1900
+32;99;1;Dos Gobernaciones (Chaco Austral y Chaco Central)
+32;100;0;Tres Gobernaciones
+32;101;0;Cuatro Gobernaciones
+33;102;0;Eran elegidas por voto popular
+33;103;1;Eran nombradas por el Poder Ejecutivo Nacional
+34;104;0;Durante la Triple Alianza
+34;105;1;Al terminar la Guerra de la Triple Alianza
+35;106;1;Ley Avellaneda sancionada en 1876
+35;107;0;Ley 28 de Bartolomé Mitre
+35;108;0;Ley 576 de 1872
+36;109;1;Algodón
+36;110;0;Pesca
+36;111;0;Caza
+37;112;0;Resistencia
+37;113;0;Puerto Tirol
+37;114;1;Vicentini
+37;115;0;La Verde
+37;116;0;La Escondida
+38;117;0;Resistencia
+38;118;0;Margarita Belén
+38;119;1;Quitilipi
+38;120;1;Machagai
+39;121;1;1951
+39;122;0;1994
+39;123;0;1862
+40;124;1;25
+40;125;0;20
+40;126;0;10
+41;127;0;5
+41;128;0;4
+41;129;1;3
+42;130;0;Entre Santa Silvina y Resistencia
+42;131;1;Entre Resistencia y Pampa del Infierno
+42;132;0;Entre Resistencia y Juan José Castelli
+43;133;1;Parque Nacional Chaco
+43;134;0;Parque Nacional El Impenetrable
+43;135;0;Parque Nacional Iberá
+44;136;1;Museo a cielo abierto de meteoritos
+44;137;0;Capital de los Inmigrantes
+44;138;0;Ciudad de las Esculturas
+45;139;1;Fiesta del Dorado
+45;140;0;Fiesta del Suburí
+45;141;0;Fiesta del Moncholo
+46;142;0;Castelli
+46;143;1;Las Breñas
+46;144;0;Puerto Tirol
+47;145;0;Puerto Vilelas
+47;146;0;Charata
+47;147;1;Puerto Tirol
+48;148;1;Pampa del Indio
+48;149;0;Pampa del Infierno
+48;150;0;Castelli
+49;151;0;Charata
+49;152;0;Gancedo
+49;153;1;Presidencia Roque Sáenz Peña
+50;154;1;Reserva Natural Provincial Fuerte Esperanza
+50;155;1;Parque Provincial Loro Hablador
+50;156;0;Campo del Cielo
+50;157;0;Villa Río Bermejito
+51;158;0;Las Breñas
+51;159;0;Fontana
+51;160;1;Quitilipi
+52;161;0;Río Pilcomayo
+52;162;1;Río Bermejo
+52;163;0;Río Negro
+53;164;0;Montaña
+53;165;0;Sierra
+53;166;1;Llanura
+54;167;0;Paraná
+54;168;1;Oro
+54;169;1;Tragadero
+54;170;0;Paraguay
+54;171;1;Negro
+54;172;1;Guaycurú
+55;173;1;Portal del Impenetrable
+55;174;0;Perla del Paraná
+55;175;0;Ciudad de las Esculturas
+56;176;1;Baloncesto
+56;177;0;Fútbol
+56;178;0;Natación
+56;179;0;Tiro
+57;180;1;Museo Casa y Jardín Schulz
+57;181;0;Estación Experimental Agropecuaria del INTA
+57;182;0;Museo a cielo abierto
+58;183;1;Inmaculada Concepción de la Virgen María
+58;184;0;Virgen de Lourdes
+58;185;0;Virgen de Itatí
+59;186;1;San Fernando Rey
+59;187;0;El Cura Brochero
+59;188;0;Virgen de Itatí
+60;189;1;Complejo Termal
+60;190;1;Complejo Ecológico y Zooloógico
+60;191;0;Museo Casa y Jardín Schulz
+61;192;1;Las ruinas del Ingenio Azucarero
+61;193;0;Las termas
