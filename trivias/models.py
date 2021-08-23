@@ -20,4 +20,7 @@ class Trivia(models.Model):
         related_name='user',
         on_delete=models.CASCADE,
     )
+    fecha = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return f"@ {self.user}| {self.get_nivel_display()}"
