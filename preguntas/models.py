@@ -13,7 +13,7 @@ class Pregunta(models.Model):
         (7, 'Geografía'),
     ]
 
-    texto = models.CharField(max_length=120)
+    texto = models.CharField(max_length=200)
     categoria = models.PositiveSmallIntegerField(
         'categoria',
         choices=CATEGORIA_CHOICES,
