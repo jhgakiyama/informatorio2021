@@ -9,7 +9,7 @@ class RespuestaInLine(admin.TabularInline):
 @admin.register(Pregunta)
 class PreguntaAdmin(admin.ModelAdmin):
     inlines = [RespuestaInLine]
-    list_display = ["texto", "categoria"] # columnas que muestra la grilla
+    list_display = ["texto", "categoria", "cant_rtas", "cant_rtas_ok"]  # columnas que muestra la grilla
     search_fields = ["texto"]  # Buscado encima
     list_filter = ["categoria"]  # Filtro a la derecha
     ordering = ["id"]
@@ -18,6 +18,11 @@ class PreguntaAdmin(admin.ModelAdmin):
 
 @admin.register(Respuesta)
 class RespuestaAdmin(admin.ModelAdmin):
-    list_display = ["texto", "pregunta", "correcta"]
+    list_display = ["texto", "short", "correcta"]
     ordering = ["pregunta", "-correcta"]
     list_filter = ["correcta"]  # Filtro a la derecha
+    list_per_page = 9
+
+
+admin.site.site_header = "Trivia Chaco 2021 | Back Office | Version 0.1.0"
+admin.site.index_title = "Trivia Chaco 2021 | Admin Dashboard"
