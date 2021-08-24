@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Registro{% endblock title %}
+
+{% block content %}
+<h2>¡Comencemos el registro!</h2>
+<br>
+<div class="card" style="width:75%;">
+  <div class="card-body">
+
+    <form method="POST">{% csrf_token %}
+      <div class="row">
+        <div class="col">
+          {{ form.first_name|as_crispy_field }}
+        </div>
+
+        <div class="col">
+          {{ form.last_name|as_crispy_field }}
+        </div>
+      </div>
+
+        {{ form.username|as_crispy_field }}
+        {{ form.email|as_crispy_field }}
+        {{ form.password1|as_crispy_field }}
+        {{ form.password2|as_crispy_field }}
+
+        <p>Al registrarme acepto haber leído y estar de acuerdo con las<button type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">
+          condiciones de uso y política de privacidad</button>
+        </p>
+        <button class="btn btn-primary" type="submit">Registrarme</button>
+    </form>
+    <br>
+     <div class="border-top pt-3">
+        <small class="text-muted">
+            Ya tienes una cuenta? <a class="ml-2" href="{% url 'login' %}">Inicia sesion</a>
+        </small>
+     </div>
+  </div>
+</div>
+<br>
+{% endblock content %}
+
+{% for object in form %}
+  {{object}}
+{% endfor %}
