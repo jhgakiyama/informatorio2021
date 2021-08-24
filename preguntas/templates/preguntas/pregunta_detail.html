@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Pregunta{% endblock title %}
+
+{% block content %}
+<div class="container">
+
+    <div class="card border-primary mb-3" style="max-width: 75%;">
+        <div class="card-header">
+            <i>{{object.get_categoria_display}}</i>
+        </div>
+        <div class="card-body text-dark">
+            <h4 class="card-title"><strong>{{object.texto}}</strong></h4>
+            <p class="card-text">
+                <ul class="list-group">
+                    {% for rta in object.get_respuestas_random %}
+                        {% if rta.correcta %}
+                            <li class="list-group-item list-group-item-success">
+                                <strong>{{ forloop.counter }}.</strong> {{rta.texto}}
+                            </li>
+                        {% else %}
+                            <li class="list-group-item list-group-item-danger">
+                                <strong>{{ forloop.counter }}.</strong> {{rta.texto}}
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </p>
+        </div>
+    </div>
+
+
+</div>
+
+
+{% endblock content %}
