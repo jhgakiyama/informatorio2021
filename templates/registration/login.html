@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}Ingresar{% endblock title %}
+
+{% block content %}
+
+{% if messages%}
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+        </symbol>
+    </svg>
+    {% for message in messages %}
+<!--    <div class="alert alert-success alert-dismissible fade show" role="alert">-->
+    <div class="alert alert-success d-flex align-items-center alert-dismissible fade show" role="alert">
+        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+        <div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            {{ message | safe}}
+            </div>
+<!--        {{ message | safe}}-->
+    </div>
+</div>
+    {% endfor %}
+{% endif%}
+
+{%if form.non_field_errors%}
+<div class="alert alert-dismissible alert-danger">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+    {% for error in form.non_field_errors %}
+    {{error}}
+    {% endfor %}
+<!--    {{ form.non_field_errors }}-->
+</div>
+{%endif%}
+<div class="container">
+<div class="row ">
+    <div class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
+        <div class="d-table-cell align-middle">
+            <div class="text-center mt-4">
+                <h1 class="h2">Hola!</h1>
+                <p class="lead">Si ya estás registrado, ingresá tus datos</p>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <div class="m-sm-4">
+                        <div class="text-center">
+                            <img src="{% static 'images/logo.png' %}" alt="logo" class="img-fluid rounded" width="120 " height="120">
+                            <p class="lead"><strong>Trivia Chaco 2021</strong></p>
+                        </div>
+                        <form method="POST">{% csrf_token %}
+                            {{ form.username | as_crispy_field }}
+                            {{ form.password | as_crispy_field }}
+
+                            <div class="text-center mt-3">
+                                 <button type="submit" class="btn btn-primary">Ingresar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<br>
+
+{% endblock content %}
