@@ -159,3 +159,10 @@ MESSAGE_TAGS = {message_constants.DEBUG: 'debug',
 # configuracion para subir a Heroku
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = BASE_DIR / 'static'
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
