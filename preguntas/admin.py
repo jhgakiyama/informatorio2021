@@ -24,5 +24,5 @@ class RespuestaAdmin(admin.ModelAdmin):
     list_per_page = 9
 
 
-admin.site.site_header = "Trivia Chaco 2021 | Back Office | Version 0.1.0"
+admin.site.site_header = "Trivia Chaco 2021 | Admin Ver 1.0.0"
 admin.site.index_title = "Trivia Chaco 2021 | Admin Dashboard"
