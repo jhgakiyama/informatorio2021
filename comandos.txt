@@ -7,3 +7,10 @@ python manage.py createsuperuser
 LANGUAGE_CODE = 'es-AR'
 
 TIME_ZONE: 'America/Argentina/Buenos_Aires'
+
+
+Modifique el admin de "Preguntas"
+    se puede buscar por "texto"
+    filtrar por "Categoria"
+
+py manage.py loaddata respuestas.json
