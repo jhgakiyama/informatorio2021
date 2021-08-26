@@ -170,3 +170,4 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
+DISABLE_COLLECTSTATIC = 1
