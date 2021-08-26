@@ -163,6 +163,6 @@ DATABASES['default'].update(db_from_env)
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Extra places for collectstatic to find static files.
-STATICFILES_DIRS = BASE_DIR / 'static'
+
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
