@@ -134,6 +134,7 @@ MEDIA_URL = '/images/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
     BASE_DIR / 'trivias' / 'static',
+    BASE_DIR / 'preguntas' / 'static',
 ]
 
 LOGIN_URL = '/login/'
