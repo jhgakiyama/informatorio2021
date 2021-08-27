@@ -13,11 +13,11 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 from django.contrib.messages import constants as message_constants
 import django_heroku
-
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+# D:\Japo\Documentos\PycharmProjects\informatorio
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -131,14 +131,21 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+# D:\Japo\Documentos\PycharmProjects\informatorio\mysite
+
 STATIC_URL = '/static/'
 
-MEDIA_URL = '/images/'
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+# D:\Japo\Documentos\PycharmProjects\informatorio\mysite\static
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',
-    BASE_DIR / 'trivias' / 'static',
+    BASE_DIR / 'static',  # D:/Japo/Documentos/PycharmProjects/informatorio/static
+    BASE_DIR / 'trivias' / 'static',  # D:/Japo/Documentos/PycharmProjects/informatorio/trivias/static
+    BASE_DIR / 'preguntas' / 'static'  # D:/Japo/Documentos/PycharmProjects/informatorio/preguntas/static
 ]
+
+MEDIA_URL = '/images/'
 
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = 'home'
@@ -157,3 +164,4 @@ MESSAGE_TAGS = {message_constants.DEBUG: 'debug',
                 }
 
 django_heroku.settings(locals())
+
