@@ -28,7 +28,12 @@ SECRET_KEY = 'django-insecure-o=$+@2qixp-1yb_6c-q5!9dg-2_dglhb#8n&(7bvjubuiz%4go
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'chacotrivia2021.herokuapp.com',
+    '127.0.0.1',
+    'localhost',
+    '192.168.0.144'
+]
 
 
 # Application definition
@@ -55,6 +60,7 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -136,8 +142,8 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
-# D:\Japo\Documentos\PycharmProjects\informatorio\mysite\static
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+# D:\Japo\Documentos\PycharmProjects\informatorio\mysite\staticfiles
 
 STATICFILES_DIRS = [
     BASE_DIR / 'static',  # D:/Japo/Documentos/PycharmProjects/informatorio/static
