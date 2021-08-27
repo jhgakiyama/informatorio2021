@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-o=$+@2qixp-1yb_6c-q5!9dg-2_dglhb#8n&(7bvjubuiz%4go'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'chacotrivia2021.herokuapp.com',
