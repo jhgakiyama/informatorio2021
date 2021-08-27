@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 from django.contrib.messages import constants as message_constants
+import django_heroku
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -153,3 +155,5 @@ MESSAGE_TAGS = {message_constants.DEBUG: 'debug',
                 message_constants.WARNING: 'warning',
                 message_constants.ERROR: 'danger',
                 }
+
+django_heroku.settings(locals())
