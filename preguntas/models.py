@@ -38,7 +38,7 @@ class Pregunta(models.Model):
 
 
 class Respuesta(models.Model):
-    texto = models.CharField(max_length=120)
+    texto = models.CharField(max_length=200)
     pregunta = models.ForeignKey(
         Pregunta,
         on_delete=models.CASCADE,
