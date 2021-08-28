@@ -13,11 +13,22 @@ class Pregunta(models.Model):
         (7, 'Geografía'),
     ]
 
+    NIVEL_CHOICES = [
+        (1, "Facil"),
+        (2, "Normal"),
+        (3, "Dificil"),
+    ]
+
     texto = models.CharField(max_length=200)
     categoria = models.PositiveSmallIntegerField(
         'categoria',
         choices=CATEGORIA_CHOICES,
         default=6
+    )
+    nivel = models.PositiveSmallIntegerField(
+        'dificultad',
+        choices=NIVEL_CHOICES,
+        default=2
     )
 
     def __str__(self):
