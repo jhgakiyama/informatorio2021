@@ -9,9 +9,9 @@ class RespuestaInLine(admin.TabularInline):
 @admin.register(Pregunta)
 class PreguntaAdmin(admin.ModelAdmin):
     inlines = [RespuestaInLine]
-    list_display = ["id", "texto", "categoria", "cant_rtas", "cant_rtas_ok"]  # columnas que muestra la grilla
+    list_display = ["id", "texto", "nivel", "categoria", "cant_rtas", "cant_rtas_ok"]  # columnas que muestra la grilla
     search_fields = ["texto"]  # Buscado encima
-    list_filter = ["categoria"]  # Filtro a la derecha
+    list_filter = ["nivel", "categoria"]  # Filtro a la derecha
     ordering = ["id"]
     list_per_page = 8
 
