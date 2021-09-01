@@ -24,7 +24,7 @@ from .views import HomePageView, SignUpView
 urlpatterns = [
     path('', include('django.contrib.auth.urls')),
     path('signup', SignUpView.as_view(), name='signup'),
-    path('home', HomePageView.as_view(), name='home'),
+    path('', HomePageView.as_view(), name='home'),
     path('admin/', admin.site.urls),
     path('trivia/', include('trivias.urls')),
     path('pregunta/', include('preguntas.urls')),
