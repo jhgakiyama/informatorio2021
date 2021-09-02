@@ -13,6 +13,7 @@
         </div>
         <div class="card-body text-dark">
             <h4 class="card-title"><strong>{{object.texto}}</strong></h4>
+            <h3>{{usuario.usuario}} puntaje {{usuario.puntaje}}</h3>
             <p class="card-text">
                 <ul class="list-group">
                     {% for rta in object.get_respuestas_random %}

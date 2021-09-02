@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from .models import Pregunta, Respuesta
+from trivias.models import PuntajeUsuario
 
 class PreguntaListView(ListView):
     model = Pregunta
@@ -13,4 +14,8 @@ class PreguntaDetailView(DetailView):
 def preguntadetailrandom(request):
     pregunta = Pregunta.objects.order_by("?").first()
     template = "preguntas/pregunta_detail.html"
-    return render(request, template, {"object": pregunta})
+    usuario = PuntajeUsuario.objects.filter(usuario = request.user.id).first()
+    contexto = {}
+    contexto["object"] = pregunta
+    contexto["usuario"] = usuario
+    return render(request, template, contexto)
