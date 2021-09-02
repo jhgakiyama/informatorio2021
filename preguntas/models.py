@@ -1,7 +1,6 @@
 from django.db import models
 import random
 
-
 class Pregunta(models.Model):
     CATEGORIA_CHOICES = [
         (1, 'Ciencia y Educación'),

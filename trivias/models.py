@@ -24,3 +24,14 @@ class Trivia(models.Model):
 
     def __str__(self):
         return f"@ {self.user}| {self.get_nivel_display()}"
+
+class PuntajeUsuario(models.Model):
+    usuario = models.ForeignKey(
+        User,
+        related_name='user_puntaje',
+        on_delete=models.CASCADE,
+    )
+    puntaje = models.IntegerField(default=0)
+
+    def __str__(self):
+        return f"@ {self.usuario}| {self.puntaje}"

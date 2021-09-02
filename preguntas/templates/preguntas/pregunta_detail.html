@@ -17,11 +17,11 @@
                 <ul class="list-group">
                     {% for rta in object.get_respuestas_random %}
                         {% if rta.correcta %}
-                            <li class="list-group-item list-group-item-success">
+                            <li id="{{ forloop.counter }}" onclick="correcto(id)" class="list-group-item list-group-item-light correcta">
                                 <strong>{{ forloop.counter }}.</strong> {{rta.texto}}
                             </li>
                         {% else %}
-                            <li class="list-group-item list-group-item-danger">
+                            <li id="{{ forloop.counter }}" onclick="incorrecto(id)" class="list-group-item list-group-item-light incorrecta">
                                 <strong>{{ forloop.counter }}.</strong> {{rta.texto}}
                             </li>
                         {% endif %}
@@ -33,6 +33,13 @@
 
 
 </div>
-
+<script>
+    function correcto(a) {
+        document.getElementById(a).style.backgroundColor = "#d1e7dd";
+    }
+    function incorrecto(b) {
+        document.getElementById(b).style.backgroundColor = "#f8d7da";
+    }
+</script>
 
 {% endblock content %}
