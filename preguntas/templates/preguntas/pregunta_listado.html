@@ -3,28 +3,32 @@
 {% block content %}
 <br>
 <br>
-<h1>Listado de Preguntas {{titulo}}</h1>
+<h1>Listado de Preguntas</h1>
 <hr>
 <div class="row">
-{% for object in object_list %}
-
+    <form>
+{% for pregunta in object_list %}
     <div class="card border-primary mb-3" style="max-width: 75%;">
         <div class="card-header">
-            <i>{{object.get_categoria_display}}</i>
+            <i>{{pregunta.get_categoria_display}}</i>
         </div>
         <div class="card-body text-dark">
-            <h4 class="card-title"><strong>{{object.texto}}</strong></h4>
+            <h4 class="card-title"><strong>{{pregunta.texto}}</strong></h4>
             <p class="card-text">
-                <ul class="list-group">
-                    {% for rta in object.get_respuestas_random %}
+                <ul id="{{pregunta.id}}" class="list-group">
+                    {% for rta in pregunta.get_respuestas_random %}
                         {% if rta.correcta %}
-                            <li id="{{ rta.id }}" onclick="correcto(id)" class="list-group-item list-group-item-light">
+                        <button type="button" onclick="correcto({{ rta.id }}, {{pregunta.id}})">
+                            <li id="{{ rta.id }}" class="list-group-item list-group-item-light">
                                 <strong>{{ forloop.counter }}.</strong> {{rta.texto}}
                             </li>
+                        </button>
                         {% else %}
-                            <li id="{{ rta.id }}" onclick="incorrecto(id)" class="list-group-item list-group-item-light">
+                        <button type="button" onclick="incorrecto({{ rta.id }}, {{pregunta.id}})">
+                            <li id="{{ rta.id }}" class="list-group-item list-group-item-light">
                                 <strong>{{ forloop.counter }}.</strong> {{rta.texto}}
                             </li>
+                        </button>
                         {% endif %}
                     {% endfor %}
                 </ul>
@@ -32,5 +36,9 @@
         </div>
     </div>
 {% endfor %}
+    <button type="submit" >Enviar</button>
+    </form>
 </div>
+<br>
+<br>
 {% endblock content %}
