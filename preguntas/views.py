@@ -19,3 +19,10 @@ def preguntadetailrandom(request):
     contexto["object"] = pregunta
     contexto["usuario"] = usuario
     return render(request, template, contexto)
+
+def getPreguntasNormal(request):
+    context = {}
+    preguntas = Pregunta.objects.order_by("?")[:10]
+    template = "preguntas/pregunta_listado.html"
+    context["object_list"] = preguntas
+    return render(request, template, context)

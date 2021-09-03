@@ -1,11 +1,12 @@
 {% extends "base.html" %}
-
-{% block title %}Pregunta{% endblock title %}
-
+{% block title %}Listado Preguntas{% endblock title %}
 {% block content %}
 <br>
 <br>
-<div class="container">
+<h1>Listado de Preguntas {{titulo}}</h1>
+<hr>
+<div class="row">
+{% for object in object_list %}
 
     <div class="card border-primary mb-3" style="max-width: 75%;">
         <div class="card-header">
@@ -13,16 +14,15 @@
         </div>
         <div class="card-body text-dark">
             <h4 class="card-title"><strong>{{object.texto}}</strong></h4>
-            <h3>{{usuario.usuario}} puntaje {{usuario.puntaje}}</h3>
             <p class="card-text">
                 <ul class="list-group">
                     {% for rta in object.get_respuestas_random %}
                         {% if rta.correcta %}
-                            <li id="{{ forloop.counter }}" onclick="correcto(id)" class="list-group-item list-group-item-light correcta">
+                            <li id="{{ rta.id }}" onclick="correcto(id)" class="list-group-item list-group-item-light">
                                 <strong>{{ forloop.counter }}.</strong> {{rta.texto}}
                             </li>
                         {% else %}
-                            <li id="{{ forloop.counter }}" onclick="incorrecto(id)" class="list-group-item list-group-item-light incorrecta">
+                            <li id="{{ rta.id }}" onclick="incorrecto(id)" class="list-group-item list-group-item-light">
                                 <strong>{{ forloop.counter }}.</strong> {{rta.texto}}
                             </li>
                         {% endif %}
@@ -31,6 +31,6 @@
             </p>
         </div>
     </div>
+{% endfor %}
 </div>
-
 {% endblock content %}

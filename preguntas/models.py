@@ -44,7 +44,7 @@ class Respuesta(models.Model):
         related_name='respuesta'
     )
     correcta = models.BooleanField(default=False)
-
+    
     def __str__(self):
         return f"Pregunta: {self.pregunta.texto}, Rta: {self.texto}, Correcta: {self.correcta}"
 
