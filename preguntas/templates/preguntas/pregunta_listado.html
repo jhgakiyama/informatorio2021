@@ -15,16 +15,16 @@
         <div class="card-body text-dark">
             <h4 class="card-title"><strong>{{pregunta.texto}}</strong></h4>
             <p class="card-text">
-                <ul id="{{pregunta.id}}" class="list-group">
+                <ul id="{{pregunta.id}}B" class="list-group">
                     {% for rta in pregunta.get_respuestas_random %}
                         {% if rta.correcta %}
-                        <button type="button" onclick="correcto({{ rta.id }}, {{pregunta.id}})">
+                        <button type="button" onclick="correcto({{ rta.id }}, '{{pregunta.id}}B')">
                             <li id="{{ rta.id }}" class="list-group-item list-group-item-light">
                                 <strong>{{ forloop.counter }}.</strong> {{rta.texto}}
                             </li>
                         </button>
                         {% else %}
-                        <button type="button" onclick="incorrecto({{ rta.id }}, {{pregunta.id}})">
+                        <button type="button" onclick="incorrecto({{ rta.id }}, '{{pregunta.id}}B')">
                             <li id="{{ rta.id }}" class="list-group-item list-group-item-light">
                                 <strong>{{ forloop.counter }}.</strong> {{rta.texto}}
                             </li>
