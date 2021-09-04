@@ -1,8 +1,8 @@
 {% load static %}
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-success">
   <div class="container">
     <a class="navbar-brand mb-0 h1" href="{% url 'home' %}">
-      <img src= "{% static 'images/logo.png' %}" width="30" height="30" class="d-inline-block align-top" alt=""> Trivia Chaco | 2021
+      Trivia Chaco | 2021
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -20,7 +20,7 @@
         </li>
       </ul>
 <!--        Botones de le derecha -->
-        <form>
+      <form class="container-form">
         {% if user.is_authenticated %}
             {% include 'includes/navbar_auth.html' %}
         {% else %}

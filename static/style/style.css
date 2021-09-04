@@ -1,0 +1,24 @@
+.bg-success {
+    background-color: rgba(1, 191, 97,var(--bs-bg-opacity))!important;
+}
+.bg-primary {
+    background-color: rgba(148, 198, 227,var(--bs-bg-opacity))!important;
+}
+.btn-primary {
+    background-color: rgba(148, 198, 227,1);
+    border-color: rgba(148, 198, 227,1);
+}
+.container-footer {
+    margin-right: 0;
+    padding-right: 10px;
+}
+
+.text-light {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 30px;
+
+    letter-spacing: 0.25em;
+    color: rgba(0,100,50,var(--bs-text-opacity))!important;
+}
