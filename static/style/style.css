@@ -1,12 +1,11 @@
 .bg-success {
-    background-color: rgba(1, 191, 97,var(--bs-bg-opacity))!important;
+    background-color: rgba(var(--bs-success-rgb),var(--bs-bg-opacity))!important;
 }
 .bg-primary {
-    background-color: rgba(148, 198, 227,var(--bs-bg-opacity))!important;
+    background-color: #35baf6 !important;
 }
 .btn-primary {
-    background-color: rgba(148, 198, 227,1);
-    border-color: rgba(148, 198, 227,1);
+    background-color: #35baf6 !important;
 }
 .container-footer {
     margin-right: 0;
@@ -22,3 +21,47 @@
     letter-spacing: 0.25em;
     color: rgba(0,100,50,var(--bs-text-opacity))!important;
 }
+
+.tituloRegistro {
+    margin-bottom: 1.8%;
+    
+}
+
+.formulario {
+    margin-top: 5%;
+}
+
+.condicionesRegistro {
+    margin-left: 1.2%;
+}
+
+.loginSaludo {
+    margin-top: 25%;
+}
+
+
+
+.subTitulo {
+    margin-top: 2%;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+}
+
+.categoriasTrivia {
+    margin-top: 1.5%;
+    font-size: 20px;
+}
+
+.body1 {
+    background-color: rgb(235, 235, 227);
+}
+
+.logoChaco {
+    width: 500px;
+    margin-left: 30%;
+    margin-top: 3%;
+}
+
+
+
+
+

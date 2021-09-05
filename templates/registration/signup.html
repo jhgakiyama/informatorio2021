@@ -4,33 +4,48 @@
 {% block title %}Registro{% endblock title %}
 
 {% block content %}
+
+
+<div>
+
 <br>
-<br>
-<h2>¡Comencemos el registro!</h2>
-<br>
-<div class="card" style="width:75%;">
+
+<div class="formulario">
+
+<div class="card">
   <div class="card-body">
 
     <form method="POST">{% csrf_token %}
+    
+    <div class="text-success"> <h2 class="tituloRegistro">¡Comencemos el registro!</h2> </div>
+    
+    <hr class="my-4">
+
       <div class="row">
         <div class="col">
           {{ form.first_name|as_crispy_field }}
-        </div>
+      </div>
 
         <div class="col">
           {{ form.last_name|as_crispy_field }}
         </div>
       </div>
 
+      
         {{ form.username|as_crispy_field }}
         {{ form.email|as_crispy_field }}
         {{ form.password1|as_crispy_field }}
         {{ form.password2|as_crispy_field }}
 
+      </div>
+
+      <div class="condicionesRegistro">
         <p>Al registrarme acepto haber leído y estar de acuerdo con las<button type="button" class="btn btn-link" data-toggle="modal" data-target="#myModal">
           condiciones de uso y política de privacidad</button>
         </p>
-        <button class="btn btn-primary" type="submit">Registrarme</button>
+      <button class="btn btn-primary" type="submit">Registrarme</button>
+      </div>
+
     </form>
     <br>
      <div class="border-top pt-3">
@@ -47,3 +62,5 @@
 {% for object in form %}
   {{object}}
 {% endfor %}
+
+</div>
