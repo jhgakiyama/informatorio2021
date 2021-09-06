@@ -40,9 +40,9 @@
 }
 
 .subTitulo {
-    margin-top: 2%;
+    margin-top: 5%;
     font-family: 'IBM Plex Sans Arabic', sans-serif;
-    text-align: center;
+    text-align: left;
 }
 
 .categoriasTrivia {
@@ -133,6 +133,9 @@
 @media (max-width: 530px) {
     .container-b {
         flex-direction: column;
+    }
+    .logo-container {
+        padding-top: 20px;
     }
 }
 
