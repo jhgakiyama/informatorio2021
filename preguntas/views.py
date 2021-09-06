@@ -58,9 +58,6 @@ def getpreguntasdificil(request):
 def resultadopregunta(request):
     context = {}
     template = "resultado.html"
-
-    print("Imprimo claves del POST")
-
     preg_id = []
     dic_p_r = {}
     cont_correcta = 0
