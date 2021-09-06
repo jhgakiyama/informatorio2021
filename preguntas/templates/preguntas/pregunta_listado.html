@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Listado Preguntas{% endblock title %}
+{% block content %}
+<br>
+<br>
+<h1>Listado de Preguntas <i>{{nivel}}</i></h1>
+<hr>
+<div class="row">
+    {% for pregunta in object_list %}
+        <form action="{% url 'resultado' %}" method="POST">{% csrf_token %}
+            <div class="card border-primary mb-3" style="max-width: 75%;">
+            <div class="card-header">
+                <i>{{pregunta.get_categoria_display}}</i>
+            </div>
+            <div class="card-body text-dark">
+                <h4 class="card-title"><strong>{{ forloop.counter }}) {{pregunta.texto}}</strong></h4>
+
+                <p class="card-text">
+                    <ul class="list-group">
+                        {% for rta in pregunta.get_respuestas_random %}
+                            <li class="list-group-item list-group-item-light">
+                                <input type="radio" id="{{pregunta.id}}" name="{{pregunta.id}}" value={{rta.id}}>
+                                <label for="{{pregunta.id}}">{{rta.texto}}</label><br>
+                                {% comment %}
+                                <label for="{{pregunta.id}}">{{rta.texto}} {{rta.correcta |yesno:"(V),(F),que paso aqui?" }} </label><br>
+                                {% endcomment %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </p>
+            </div>
+        </div>
+
+    {% endfor %}
+    <input type="submit" value="Enviar">
+    </form>
+</div>
+<br><br><br><br>
+
+{% endblock content %}
