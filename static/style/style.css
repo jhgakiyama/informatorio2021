@@ -80,9 +80,36 @@
 .div-container {
     display: block;
 }
-/* @media screen and (max-width:992px) {
-    max-height: 1200px;
-} */
+.btn-container {
+    margin-right: 10px;
+}
+.container-b {
+    display: flex;
+    flex-wrap: inherit;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.sub-container {
+    display: flex;
+}
+.navbar-nav {
+    display: flex;
+    align-items: flex-end;
+}
+.navbar {
+    display:block;
+}
+.container-form {
+    padding: 0;
+    margin-right: 10px;
+}
+.sub-container-list {
+    display: flex;
+    flex-direction: column;
+}
 
 
 

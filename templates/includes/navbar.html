@@ -1,25 +1,11 @@
 {% load static %}
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-success">
-  <div class="container">
+  <div class="container-b">
     <a class="navbar-brand mb-0 h1" href="{% url 'home' %}">
       Trivia Chaco | 2021
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'trivia-list' %}">Trivias</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Ranking</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'pregunta-detail-random' %}">Random</a>
-        </li>
-      </ul>
-<!--        Botones de le derecha -->
+    <div class="sub-container">
+      <!--        Botones de le derecha -->
       <form class="container-form">
         {% if user.is_authenticated %}
             {% include 'includes/navbar_auth.html' %}
@@ -32,6 +18,26 @@
             </a>
         {% endif %}
       </form>
+      <div class="sub-container-list">
+        <div class="btn-container">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'trivia-list' %}">Trivias</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Ranking</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'pregunta-detail-random' %}">Random</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </nav>
