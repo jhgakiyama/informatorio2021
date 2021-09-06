@@ -31,7 +31,40 @@ class Pregunta(models.Model):
     )
 
     def __str__(self):
-        return f"{self.texto}"
+        return f"{self.texto} ({self.get_nivel_display()})"
+
+    def get_rtas_correctas(self):
+        rtas = Respuesta.objects.filter(pregunta=self.id, correcta=True)
+        return rtas
+
+    def respuesta_es_correcta(self, rta):
+        rtas = self.get_rtas_correctas()
+        col_id = []
+        for r in rtas:
+            col_id.append(r.id)
+        if rta in col_id:
+            return True
+        else:
+            return False
+
+    def get_respuestas(self):
+        rtas = list(Respuesta.objects.filter(pregunta=self.id))
+        random.shuffle(rtas)
+        return rtas
+
+    def get_respuestas_ok(self):
+        rtas = list(Respuesta.objects.filter(pregunta=self.id, correcta=True))
+        # salida = f'{len(rtas)} \n'
+        salida = ''
+         # en el admin si queda lindo
+        # for idx, r in enumerate(rtas, start=1):
+        #     salida += f"{idx}){r.texto}.\n"
+        # return salida
+        for r in rtas:
+            salida += f"{r.texto}"
+            # salida += f"id: {r.id} - {r.texto}"
+        return salida
+    get_respuestas_ok.short_description = "Rtas Correctas"
 
     def get_respuestas_random(self):
         respuestas = list(Respuesta.objects.filter(pregunta=self.id))
@@ -57,7 +90,7 @@ class Respuesta(models.Model):
     correcta = models.BooleanField(default=False)
     
     def __str__(self):
-        return f"Pregunta: {self.pregunta.texto}, Rta: {self.texto}, Correcta: {self.correcta}"
+        return f"{self.texto} (V)" if self.correcta else f"{self.texto} (F)"
 
     def short(self):
         return f"{self.pregunta.texto[:60]} ..."
