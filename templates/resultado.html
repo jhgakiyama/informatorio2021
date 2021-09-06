@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block title %}Resultado{% endblock title %}
+
+{% block content %}
+<br>
+<br>
+<h1><strong>Resultados</strong></h1>
+
+{% comment%}
+<p>Sumando {{num1}} + {{num2}}</p>
+<p>Total a pagar:$ {{ num1|add:num2 }}</p>
+<p>Calculando ....</p>
+<p>Request: {{request}}</p>
+{% endcomment%}
+
+
+<ul class="list-group">
+
+{% for pregunta in preguntas_originales %}
+    {% for key,rta in respuestas_sel.items %}
+        {% if pregunta.id == key %}
+            {% if rta.correcta %}
+                <li class="list-group-item list-group-item-success">
+                    <strong>{{pregunta.texto}} | Respuesta: {{pregunta.get_respuestas_ok}}</strong>
+                </li>
+            {% else %}
+                <li class="list-group-item list-group-item-danger">
+                    <strong>{{pregunta.texto}} | Respuesta correcta: {{pregunta.get_respuestas_ok}} | Respondiste: {{rta.texto}}</strong>
+                </li>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+{% endfor %}
+</ul><br>
+
+{% if correctas > 6 %}
+<h2>Buen trabajo! Respondiste {{correctas}} de 10 de manera correcta</h2>
+{% else %}
+<h2>Suerte la próxima! Respondiste {{correctas}} de 10 manera correcta</h2>
+{% endif %}
+<br>
+<table class="table">
+    <!-- Cabeceras -->
+    <thead>
+        <tr class="table">
+            <th scope="col">Pregunta</th>
+            <th scope="col">Respuesta correcta</th>
+            <th scope="col">Elegiste</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    {% for pregunta in preguntas_originales %}
+    <!-- Filas -->
+        <tr class="table">
+            <td scope="row">{{pregunta.texto}}</td>
+            <td scope="row">{{pregunta.get_respuestas_ok}}</td>
+
+            {% for key,rta in respuestas_sel.items %}
+                {% if pregunta.id == key %}
+                    {% if rta.correcta %}
+                        <td class="table-success" scope="row">{{rta.texto}}</td>
+                    {% else %}
+                        <td class="table-danger" scope="row">{{rta.texto}}</td>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<br>
+<br>
+
+{% comment %}
+<table class="table">
+    <!-- Cabeceras -->
+    <thead>
+        <tr class="table-danger">
+            <th scope="col">Pregunta</th>
+            <th scope="col">Seleccionada</th>
+        </tr>
+    </thead>
+
+    <tbody>
+    {% for key, values in request.POST.items %}
+    <!-- Filas -->
+        <tr class="table-primary">
+            <td scope="row">{{key}}</td>
+            <td scope="row">{{values}}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endcomment %}
+{% endblock content %}

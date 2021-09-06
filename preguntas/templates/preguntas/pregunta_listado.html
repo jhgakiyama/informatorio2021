@@ -3,42 +3,38 @@
 {% block content %}
 <br>
 <br>
-<h1>Listado de Preguntas</h1>
+<h1>Listado de Preguntas <i>{{nivel}}</i></h1>
 <hr>
 <div class="row">
-    <form>
-{% for pregunta in object_list %}
-    <div class="card border-primary mb-3" style="max-width: 75%;">
-        <div class="card-header">
-            <i>{{pregunta.get_categoria_display}}</i>
-        </div>
-        <div class="card-body text-dark">
-            <h4 class="card-title"><strong>{{pregunta.texto}}</strong></h4>
-            <p class="card-text">
-                <ul id="{{pregunta.id}}B" class="list-group">
-                    {% for rta in pregunta.get_respuestas_random %}
-                        {% if rta.correcta %}
-                        <button type="button" onclick="correcto({{ rta.id }}, '{{pregunta.id}}B')">
-                            <li id="{{ rta.id }}" class="list-group-item list-group-item-light">
-                                <strong>{{ forloop.counter }}.</strong> {{rta.texto}}
+    {% for pregunta in object_list %}
+        <form action="{% url 'resultado' %}" method="POST">{% csrf_token %}
+            <div class="card border-primary mb-3" style="max-width: 75%;">
+            <div class="card-header">
+                <i>{{pregunta.get_categoria_display}}</i>
+            </div>
+            <div class="card-body text-dark">
+                <h4 class="card-title"><strong>{{ forloop.counter }}) {{pregunta.texto}}</strong></h4>
+
+                <p class="card-text">
+                    <ul class="list-group">
+                        {% for rta in pregunta.get_respuestas_random %}
+                            <li class="list-group-item list-group-item-light">
+                                <input type="radio" id="{{pregunta.id}}" name="{{pregunta.id}}" value={{rta.id}}>
+                                <label for="{{pregunta.id}}">{{rta.texto}}</label><br>
+                                {% comment %}
+                                <label for="{{pregunta.id}}">{{rta.texto}} {{rta.correcta |yesno:"(V),(F),que paso aqui?" }} </label><br>
+                                {% endcomment %}
                             </li>
-                        </button>
-                        {% else %}
-                        <button type="button" onclick="incorrecto({{ rta.id }}, '{{pregunta.id}}B')">
-                            <li id="{{ rta.id }}" class="list-group-item list-group-item-light">
-                                <strong>{{ forloop.counter }}.</strong> {{rta.texto}}
-                            </li>
-                        </button>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-            </p>
+                        {% endfor %}
+                    </ul>
+                </p>
+            </div>
         </div>
-    </div>
-{% endfor %}
-    <button type="submit" >Enviar</button>
+
+    {% endfor %}
+    <input type="submit" value="Enviar">
     </form>
 </div>
-<br>
-<br>
+<br><br><br><br>
+
 {% endblock content %}
