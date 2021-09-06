@@ -130,5 +130,10 @@
         max-width: 95%;
     }
 }
+@media (max-width: 530px) {
+    .container-b {
+        flex-direction: column;
+    }
+}
 
 
