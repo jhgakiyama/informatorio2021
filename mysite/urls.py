@@ -18,16 +18,18 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import urls
-from trivias import urls
-from .views import HomePageView, SignUpView
+from .views import HomePageView, SignUpView, JugarTemplateView, add
+from trivias.views import ranking
 
 urlpatterns = [
     path('', include('django.contrib.auth.urls')),
     path('signup', SignUpView.as_view(), name='signup'),
     path('', HomePageView.as_view(), name='home'),
     path('admin/', admin.site.urls),
-    path('trivia/', include('trivias.urls')),
+    path('sumando', add, name='add-name'),
     path('pregunta/', include('preguntas.urls')),
+    path('jugar/', JugarTemplateView.as_view(), name='jugar'),
+    path('ranking/', ranking, name='ranking')
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
