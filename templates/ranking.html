@@ -3,79 +3,78 @@
 {% block title %}Home{% endblock title %}
 
 {% block content %}
-<br>
-<br>
-<h2><strong>Ranking</strong></h2>
+<div class="content-rank">
+    <h2><strong>Ranking</strong></h2>
 
-<div class="container">
-  <div class="row">
-<!--      F a c i l-->
-      <div class="col">
-          <center><h3>Facil</h3></center>
-          <table class="table">
-            <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Usuario</th>
-                  <th scope="col">Puntos</th>
-                </tr>
-            </thead>
-        <tbody>
-            {% for juego in listado_faciles %}
-                <tr>
-                    <th scope="row">{{forloop.counter }}</th>
-                    <td>@{{juego.user__username}}</td>
-                    <td>{{juego.puntaje__sum}}</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-</table>
-      </div>
-    <!--  N o r m a l -->
-      <div class="col">
-          <center><h3>Normal</h3></center>
-          <table class="table">
-            <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Usuario</th>
-                  <th scope="col">Puntos</th>
-                </tr>
-            </thead>
-        <tbody>
-            {% for juego in listado_normales %}
-                <tr>
-                    <th scope="row">{{forloop.counter }}</th>
-                    <td>@{{juego.user__username}}</td>
-                    <td>{{juego.puntaje__sum}}</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-</table>
-      </div>
-<!--        Dificil-->
-      <div class="col">
-          <center><h3>Dificil</h3></center>
-          <table class="table">
-            <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Usuario</th>
-                  <th scope="col">Puntos</th>
-                </tr>
-            </thead>
-        <tbody>
-            {% for juego in listado_dificiles %}
-                <tr>
-                    <th scope="row">{{forloop.counter }}</th>
-                    <td>@{{juego.user__username}}</td>
-                    <td>{{juego.puntaje__sum}}</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-</table>
-      </div>
-  </div>
+    <div class="container">
+    <div class="row">
+    <!--      F a c i l-->
+        <div class="col">
+            <center><h3>Facil</h3></center>
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Usuario</th>
+                    <th scope="col">Puntos</th>
+                    </tr>
+                </thead>
+            <tbody>
+                {% for juego in listado_faciles %}
+                    <tr>
+                        <th scope="row">{{forloop.counter }}</th>
+                        <td>@{{juego.user__username}}</td>
+                        <td>{{juego.puntaje__sum}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+    </table>
+        </div>
+        <!--  N o r m a l -->
+        <div class="col">
+            <center><h3>Normal</h3></center>
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Usuario</th>
+                    <th scope="col">Puntos</th>
+                    </tr>
+                </thead>
+            <tbody>
+                {% for juego in listado_normales %}
+                    <tr>
+                        <th scope="row">{{forloop.counter }}</th>
+                        <td>@{{juego.user__username}}</td>
+                        <td>{{juego.puntaje__sum}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+    </table>
+        </div>
+    <!--        Dificil-->
+        <div class="col">
+            <center><h3>Dificil</h3></center>
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Usuario</th>
+                    <th scope="col">Puntos</th>
+                    </tr>
+                </thead>
+            <tbody>
+                {% for juego in listado_dificiles %}
+                    <tr>
+                        <th scope="row">{{forloop.counter }}</th>
+                        <td>@{{juego.user__username}}</td>
+                        <td>{{juego.puntaje__sum}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+    </table>
+        </div>
+    </div>
+    </div>
 </div>
-
 {% endblock content %}

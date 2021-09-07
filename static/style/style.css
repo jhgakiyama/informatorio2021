@@ -148,6 +148,10 @@
     .container-signup {
         margin-top: 5%;
     }
+    .content-rank {
+        padding-top: 15%;
+        padding-bottom: 15%;
+    }
 }
 .h55 {
     margin-top: 5%;
@@ -179,4 +183,8 @@ ul {
 }
 .container_form {
     width: 50em;
+}
+.content-rank {
+    margin-top: 4%;
+    margin-bottom: 3%;
 }
