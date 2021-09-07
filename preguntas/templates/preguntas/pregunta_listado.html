@@ -1,14 +1,13 @@
 {% extends "base.html" %}
 {% block title %}Listado Preguntas{% endblock title %}
 {% block content %}
-<br>
-<br>
 <h1>Listado de Preguntas <i>{{nivel}}</i></h1>
-<hr>
 <div class="row">
+    <form action="{% url 'resultado' %}" method="POST">{% csrf_token %}
+        <div class="form-container">
     {% for pregunta in object_list %}
-        <form action="{% url 'resultado' %}" method="POST">{% csrf_token %}
-            <div class="card border-primary mb-3" style="max-width: 75%;">
+        
+        <div class="card border-primary mb-3 container_form" style="max-width: 75%;">
             <div class="card-header">
                 <i>{{pregunta.get_categoria_display}}</i>
             </div>
@@ -32,9 +31,9 @@
         </div>
 
     {% endfor %}
-    <input type="submit" value="Enviar">
+        </div>
+        <input type="submit" value="Enviar">
     </form>
 </div>
-<br><br><br><br>
 
 {% endblock content %}

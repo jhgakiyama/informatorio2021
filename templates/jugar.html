@@ -3,17 +3,16 @@
 {% block title %}Home{% endblock title %}
 
 {% block content %}
-<br>
-<br>
-<h2><strong>Elige un nivel!!</strong></h2>
-
+<div class="titulo-juego">
+  <h2><strong>¡Elige un nivel!</strong></h2>
+</div>
 <div class="container">
   <div class="row">
     <div class="col">
       <div class="card">
           <div class="card-body">
             <h5 class="card-title">Facil</h5>
-            <p class="card-text">Facil como la tabla del 2</p>
+            <p class="card-text">Preguntas de cultura general sobre el Chaco</p>
               <a href="{% url 'preguntas-facil' %}" class="btn btn-primary">Jugar</a>
           </div>
       </div>
@@ -23,7 +22,7 @@
       <div class="card">
           <div class="card-body">
             <h5 class="card-title">Normal</h5>
-            <p class="card-text">Conocimiento que todo chaqueño conoce</p>
+            <p class="card-text">Conocimiento intermedio</p>
               <a href="{% url 'preguntas-normal' %}" class="btn btn-primary">Jugar</a>
           </div>
       </div>
@@ -33,7 +32,7 @@
       <div class="card">
           <div class="card-body">
             <h5 class="card-title">Dificil</h5>
-            <p class="card-text">Solo apto para chaqueños lomo plateado.</p>
+            <p class="card-text">Desafía tus conocimientos sobre la provincia</p>
               <a href="{% url 'preguntas-dificil' %}" class="btn btn-primary">Jugar</a>
           </div>
       </div>
