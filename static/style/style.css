@@ -72,6 +72,7 @@
     width: auto;
 }
 
+
 .logoChaco {
     height: 100%;
     max-height: 600px;
@@ -143,13 +144,16 @@
         margin-top: 10%;
     }
     .h55 {
-        padding-top: 15 %;
+        padding-top: 15%;
     }
     .container-signup {
         margin-top: 5%;
     }
     .content-rank {
         padding-top: 15%;
+        padding-bottom: 15%;
+    }
+    .form-container {
         padding-bottom: 15%;
     }
 }
